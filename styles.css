@@ -1,6 +1,6 @@
 :root {
-  --bg-deep: #07111d;
-  --bg-mid: #0d2031;
+  --bg-deep: #08131f;
+  --bg-mid: #102335;
   --panel: #10253a;
   --panel-strong: #0c1e30;
   --panel-soft: #173047;
@@ -8,13 +8,13 @@
   --line-soft: #3b5a72;
   --text-main: #f6f1e5;
   --text-muted: #c1c8c6;
-  --red: #ff5a5f;
-  --blue: #4ea8ff;
-  --gold: #ffd166;
-  --mint: #44e1b1;
+  --red: #ff4c62;
+  --blue: #3db2ff;
+  --gold: #ffe24a;
+  --mint: #2ff0b2;
   --rule-accent: var(--red);
   --rule-border-color: #8f4a4e;
-  --rule-surface-color: #342129;
+  --rule-surface-color: #2b2430;
   --rule-badge-color: #ffb4b7;
   --button-shadow: 0 18px 32px rgba(0, 0, 0, 0.34);
 }
@@ -32,7 +32,7 @@ body {
 body {
   font-family: "Trebuchet MS", "Segoe UI", Tahoma, sans-serif;
   color: var(--text-main);
-  background: #0b1622;
+  background: #09131d;
   overflow: hidden;
   touch-action: manipulation;
 }
@@ -146,7 +146,7 @@ button {
   position: relative;
   border: 1px solid var(--line);
   border-radius: 28px;
-  background: #12283d;
+  background: #13293f;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
 }
 
@@ -160,7 +160,7 @@ button {
   align-items: center;
   padding: 8px 12px;
   border-radius: 999px;
-  background: #314559;
+  background: #284258;
   color: #ffe6a4;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
@@ -192,7 +192,7 @@ button {
 .result-stats div {
   padding: 14px 12px;
   border-radius: 18px;
-  background: #152d42;
+  background: #163046;
   border: 1px solid #35516a;
 }
 
@@ -215,7 +215,7 @@ button {
   height: 60px;
   border: none;
   border-radius: 18px;
-  background: linear-gradient(135deg, #ffd166 0%, #ff8552 100%);
+  background: linear-gradient(135deg, #fff07a 0%, #ffd537 100%);
   color: #11151a;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -253,7 +253,7 @@ button {
 .metric-chip {
   padding: 14px;
   border-radius: 18px;
-  background: #152d42;
+  background: #163046;
   border: 1px solid #35516a;
 }
 
@@ -297,23 +297,23 @@ button {
 
 .rule-card[data-accent="red"] {
   --rule-accent: var(--red);
-  --rule-border-color: #8f4a4e;
-  --rule-surface-color: #342129;
+  --rule-border-color: #a34f5c;
+  --rule-surface-color: #302530;
   --rule-badge-color: #ffb4b7;
 }
 
 .rule-card[data-accent="blue"] {
   --rule-accent: var(--blue);
-  --rule-border-color: #436f9a;
-  --rule-surface-color: #1f3044;
-  --rule-badge-color: #9acfff;
+  --rule-border-color: #4f89b8;
+  --rule-surface-color: #213749;
+  --rule-badge-color: #a9dbff;
 }
 
 .rule-card[data-accent="gold"] {
   --rule-accent: var(--gold);
-  --rule-border-color: #8a7543;
-  --rule-surface-color: #382f1f;
-  --rule-badge-color: #ffe1a0;
+  --rule-border-color: #c3b054;
+  --rule-surface-color: #233748;
+  --rule-badge-color: #fff09b;
 }
 
 .rule-badge {
@@ -336,14 +336,14 @@ button {
   height: 10px;
   overflow: hidden;
   border-radius: 999px;
-  background: #1a3448;
+  background: #1b364b;
 }
 
 .timer-fill {
   width: 100%;
   height: 100%;
   transform-origin: left center;
-  background: linear-gradient(90deg, #44e1b1 0%, #ffd166 55%, #ff5a5f 100%);
+  background: linear-gradient(90deg, #2ff0b2 0%, #ffe24a 55%, #ff4c62 100%);
 }
 
 .arena-shell {
@@ -362,7 +362,7 @@ button {
   gap: 8px;
   padding: 20px;
   border-radius: 28px;
-  background: #13283b;
+  background: #142c41;
   border: 1px solid var(--line-soft);
   opacity: 0;
   transform: scale(0.95);
@@ -400,7 +400,7 @@ button {
   align-items: center;
   border: 1px solid var(--line);
   border-radius: 34px;
-  background: #102536;
+  background: #11283b;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
   overflow: hidden;
   touch-action: manipulation;
@@ -436,34 +436,35 @@ button {
 .stimulus {
   width: min(46vw, 190px);
   aspect-ratio: 1;
+  border: 2px solid rgba(255, 255, 255, 0.16);
   box-shadow:
-    0 0 0 8px rgba(255, 255, 255, 0.06),
-    0 18px 34px rgba(0, 0, 0, 0.35),
-    0 0 28px var(--stimulus-glow);
+    0 0 0 8px rgba(255, 255, 255, 0.08),
+    0 18px 30px rgba(0, 0, 0, 0.28),
+    0 0 34px var(--stimulus-glow);
   animation: stimulus-pop 180ms ease-out;
 }
 
 .color-red {
   --stimulus-color: var(--red);
-  --stimulus-glow: rgba(255, 90, 95, 0.28);
+  --stimulus-glow: rgba(255, 76, 98, 0.34);
   background: var(--red);
 }
 
 .color-blue {
   --stimulus-color: var(--blue);
-  --stimulus-glow: rgba(78, 168, 255, 0.28);
+  --stimulus-glow: rgba(61, 178, 255, 0.34);
   background: var(--blue);
 }
 
 .color-gold {
   --stimulus-color: var(--gold);
-  --stimulus-glow: rgba(255, 209, 102, 0.26);
+  --stimulus-glow: rgba(255, 226, 74, 0.34);
   background: var(--gold);
 }
 
 .color-mint {
   --stimulus-color: var(--mint);
-  --stimulus-glow: rgba(68, 225, 177, 0.26);
+  --stimulus-glow: rgba(47, 240, 178, 0.34);
   background: var(--mint);
 }
 
