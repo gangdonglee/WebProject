@@ -1,6 +1,11 @@
 :root {
   --bg-deep: #07111d;
   --bg-mid: #0d2031;
+  --warm-top: #e5b461;
+  --warm-mid: #9a6137;
+  --warm-deep: #59361e;
+  --warm-panel-top: #6e4b2d;
+  --warm-panel-mid: #2c3a43;
   --panel: #10253a;
   --panel-strong: #0c1e30;
   --panel-soft: #173047;
@@ -33,8 +38,8 @@ body {
   font-family: "Trebuchet MS", "Segoe UI", Tahoma, sans-serif;
   color: var(--text-main);
   background:
-    radial-gradient(circle at top, rgba(255, 209, 102, 0.12), transparent 28%),
-    linear-gradient(180deg, #0e1b28 0%, #07111d 100%);
+    radial-gradient(circle at 50% -4%, rgba(245, 208, 128, 0.42) 0%, rgba(166, 98, 55, 0.24) 34%, transparent 58%),
+    linear-gradient(180deg, var(--warm-top) 0%, var(--warm-mid) 18%, var(--warm-deep) 36%, #16273a 62%, #07111d 100%);
   overflow: hidden;
   touch-action: manipulation;
 }
@@ -62,7 +67,7 @@ button {
   height: 46vw;
   top: -8vw;
   right: -8vw;
-  background: radial-gradient(circle, rgba(255, 90, 95, 0.85), transparent 72%);
+  background: radial-gradient(circle, rgba(255, 165, 96, 0.7), transparent 72%);
   animation: orb-float 10s ease-in-out infinite;
 }
 
@@ -71,7 +76,7 @@ button {
   height: 52vw;
   bottom: -18vw;
   left: -14vw;
-  background: radial-gradient(circle, rgba(78, 168, 255, 0.66), transparent 72%);
+  background: radial-gradient(circle, rgba(150, 95, 48, 0.52), transparent 72%);
   animation: orb-float 12s ease-in-out infinite reverse;
 }
 
@@ -155,7 +160,7 @@ button {
   position: relative;
   border: 1px solid var(--line);
   border-radius: 28px;
-  background: linear-gradient(180deg, #173048, #0f2436);
+  background: linear-gradient(180deg, var(--warm-panel-top) 0%, var(--warm-panel-mid) 26%, #102536 100%);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
 }
 
@@ -169,7 +174,7 @@ button {
   align-items: center;
   padding: 8px 12px;
   border-radius: 999px;
-  background: #473d20;
+  background: #6e4e26;
   color: #ffe6a4;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
@@ -201,8 +206,8 @@ button {
 .result-stats div {
   padding: 14px 12px;
   border-radius: 18px;
-  background: #152d42;
-  border: 1px solid #213e56;
+  background: linear-gradient(180deg, #5b4128 0%, #193146 100%);
+  border: 1px solid #35516a;
 }
 
 .mode-meta dt,
@@ -262,8 +267,8 @@ button {
 .metric-chip {
   padding: 14px;
   border-radius: 18px;
-  background: #152d42;
-  border: 1px solid #213e56;
+  background: linear-gradient(180deg, #5b4128 0%, #193146 100%);
+  border: 1px solid #35516a;
 }
 
 .stat-label {
@@ -298,7 +303,7 @@ button {
   padding: 16px;
   border-radius: 20px;
   border: 1px solid var(--rule-border-color);
-  background: linear-gradient(135deg, var(--rule-surface-color), #173047 72%);
+  background: linear-gradient(135deg, var(--rule-surface-color), #21405b 72%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
   display: grid;
   gap: 6px;
@@ -345,7 +350,7 @@ button {
   height: 10px;
   overflow: hidden;
   border-radius: 999px;
-  background: #1a3448;
+  background: linear-gradient(90deg, #4a3925 0%, #1a3448 100%);
 }
 
 .timer-fill {
@@ -371,7 +376,7 @@ button {
   gap: 8px;
   padding: 20px;
   border-radius: 28px;
-  background: linear-gradient(180deg, #0b1622, #13283b);
+  background: linear-gradient(180deg, #6d4c2e 0%, #1d3448 34%, #13283b 100%);
   border: 1px solid var(--line-soft);
   opacity: 0;
   transform: scale(0.95);
@@ -410,8 +415,8 @@ button {
   border: 1px solid var(--line);
   border-radius: 34px;
   background:
-    radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.08), transparent 42%),
-    linear-gradient(180deg, #16324a, #0d2233);
+    radial-gradient(circle at 50% 28%, rgba(255, 214, 125, 0.18), transparent 40%),
+    linear-gradient(180deg, #6a482b 0%, #24425c 28%, #0d2233 100%);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
   overflow: hidden;
   touch-action: manipulation;
