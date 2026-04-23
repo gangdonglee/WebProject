@@ -1,11 +1,6 @@
 :root {
   --bg-deep: #07111d;
   --bg-mid: #0d2031;
-  --warm-top: #e5b461;
-  --warm-mid: #9a6137;
-  --warm-deep: #59361e;
-  --warm-panel-top: #6e4b2d;
-  --warm-panel-mid: #2c3a43;
   --panel: #10253a;
   --panel-strong: #0c1e30;
   --panel-soft: #173047;
@@ -37,9 +32,7 @@ body {
 body {
   font-family: "Trebuchet MS", "Segoe UI", Tahoma, sans-serif;
   color: var(--text-main);
-  background:
-    radial-gradient(circle at 50% -4%, rgba(245, 208, 128, 0.42) 0%, rgba(166, 98, 55, 0.24) 34%, transparent 58%),
-    linear-gradient(180deg, var(--warm-top) 0%, var(--warm-mid) 18%, var(--warm-deep) 36%, #16273a 62%, #07111d 100%);
+  background: #0b1622;
   overflow: hidden;
   touch-action: manipulation;
 }
@@ -58,8 +51,7 @@ button {
 .backdrop-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(14px);
-  opacity: 0.45;
+  display: none;
 }
 
 .orb-a {
@@ -81,13 +73,7 @@ button {
 }
 
 .backdrop-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 22px 22px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 88%);
+  display: none;
 }
 
 .app-shell {
@@ -160,7 +146,7 @@ button {
   position: relative;
   border: 1px solid var(--line);
   border-radius: 28px;
-  background: linear-gradient(180deg, var(--warm-panel-top) 0%, var(--warm-panel-mid) 26%, #102536 100%);
+  background: #12283d;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
 }
 
@@ -174,7 +160,7 @@ button {
   align-items: center;
   padding: 8px 12px;
   border-radius: 999px;
-  background: #6e4e26;
+  background: #314559;
   color: #ffe6a4;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
@@ -206,7 +192,7 @@ button {
 .result-stats div {
   padding: 14px 12px;
   border-radius: 18px;
-  background: linear-gradient(180deg, #5b4128 0%, #193146 100%);
+  background: #152d42;
   border: 1px solid #35516a;
 }
 
@@ -267,7 +253,7 @@ button {
 .metric-chip {
   padding: 14px;
   border-radius: 18px;
-  background: linear-gradient(180deg, #5b4128 0%, #193146 100%);
+  background: #152d42;
   border: 1px solid #35516a;
 }
 
@@ -303,7 +289,7 @@ button {
   padding: 16px;
   border-radius: 20px;
   border: 1px solid var(--rule-border-color);
-  background: linear-gradient(135deg, var(--rule-surface-color), #21405b 72%);
+  background: var(--rule-surface-color);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
   display: grid;
   gap: 6px;
@@ -350,7 +336,7 @@ button {
   height: 10px;
   overflow: hidden;
   border-radius: 999px;
-  background: linear-gradient(90deg, #4a3925 0%, #1a3448 100%);
+  background: #1a3448;
 }
 
 .timer-fill {
@@ -376,7 +362,7 @@ button {
   gap: 8px;
   padding: 20px;
   border-radius: 28px;
-  background: linear-gradient(180deg, #6d4c2e 0%, #1d3448 34%, #13283b 100%);
+  background: #13283b;
   border: 1px solid var(--line-soft);
   opacity: 0;
   transform: scale(0.95);
@@ -414,9 +400,7 @@ button {
   align-items: center;
   border: 1px solid var(--line);
   border-radius: 34px;
-  background:
-    radial-gradient(circle at 50% 28%, rgba(255, 214, 125, 0.18), transparent 40%),
-    linear-gradient(180deg, #6a482b 0%, #24425c 28%, #0d2233 100%);
+  background: #102536;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
   overflow: hidden;
   touch-action: manipulation;
