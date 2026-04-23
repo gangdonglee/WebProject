@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>zero_point_three</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-backdrop" aria-hidden="true">
+    <div class="backdrop-orb orb-a"></div>
+    <div class="backdrop-orb orb-b"></div>
+    <div class="backdrop-grid"></div>
+  </div>
+
+  <main class="app-shell" id="app-shell">
+    <section class="screen screen-title is-active" id="title-screen">
+      <div class="brand-block">
+        <p class="eyebrow">VERTICAL HYPER CASUAL REACTION PROTOTYPE</p>
+        <h1 class="brand-title" id="project-name">zero_point_three</h1>
+        <p class="brand-subtitle">0.3초의 망설임도 치명적인 카오스 반응속도 게임</p>
+      </div>
+
+      <article class="mode-card">
+        <span class="mode-pill" id="mode-name">Chaos Mode 01</span>
+        <h2>규칙이 바뀌면 즉시 적응</h2>
+        <p>현재 규칙과 자극을 확인해 맞으면 탭, 아니면 무시하세요. 실수하거나 놓치면 바로 종료됩니다.</p>
+        <dl class="mode-meta">
+          <div>
+            <dt>시작 제한</dt>
+            <dd>1.20s</dd>
+          </div>
+          <div>
+            <dt>규칙 전환</dt>
+            <dd>5점마다</dd>
+          </div>
+          <div>
+            <dt>최고 기록</dt>
+            <dd id="title-best-score">0</dd>
+          </div>
+        </dl>
+      </article>
+
+      <button class="primary-button" id="start-button" type="button">Chaos Mode 시작</button>
+      <p class="title-footer">모바일 세로 플레이에 맞춘 프로토타입입니다. 데스크톱에서는 Space 또는 Enter로도 반응할 수 있습니다.</p>
+    </section>
+
+    <section class="screen screen-game" id="game-screen">
+      <header class="hud-panel">
+        <div class="hud-row">
+          <div class="stat-card">
+            <span class="stat-label">SCORE</span>
+            <strong class="stat-value" id="score-value">0</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">BEST</span>
+            <strong class="stat-value" id="best-value">0</strong>
+          </div>
+        </div>
+
+        <div class="hud-row hud-row--compact">
+          <div class="metric-chip">WINDOW <strong id="reaction-value">1.20s</strong></div>
+          <div class="metric-chip">NEXT SHIFT <strong id="shift-value">5</strong></div>
+        </div>
+
+        <div class="rule-card" id="rule-card" data-accent="red">
+          <span class="rule-badge">ACTIVE RULE</span>
+          <strong class="rule-label" id="rule-label">빨간 도형이면 탭</strong>
+          <span class="rule-hint" id="rule-hint">빨간색만 반응하고 나머지는 무시하세요.</span>
+        </div>
+
+        <div class="timer-track">
+          <div class="timer-fill" id="timer-fill"></div>
+        </div>
+      </header>
+
+      <div class="arena-shell">
+        <div class="rule-transition" id="rule-transition" aria-hidden="true">
+          <span class="transition-kicker">RULE SHIFT</span>
+          <strong class="transition-label" id="transition-label"></strong>
+          <span class="transition-hint" id="transition-hint"></span>
+        </div>
+
+        <button class="game-arena" id="game-arena" type="button">
+          <span class="arena-ring"></span>
+          <span class="stimulus-slot" id="stimulus-slot" aria-live="polite"></span>
+          <span class="arena-copy">현재 규칙과 일치하면 탭</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="screen screen-result" id="result-screen">
+      <div class="result-card">
+        <p class="eyebrow">RUN OVER</p>
+        <h2>Result</h2>
+
+        <div class="result-stats">
+          <div>
+            <span>현재 점수</span>
+            <strong id="result-score">0</strong>
+          </div>
+          <div>
+            <span>최고 점수</span>
+            <strong id="result-best">0</strong>
+          </div>
+        </div>
+
+        <p class="result-reason" id="result-reason">규칙을 놓쳤습니다.</p>
+        <p class="result-rule" id="result-rule">마지막 규칙: 빨간 도형이면 탭</p>
+      </div>
+
+      <button class="primary-button" id="restart-button" type="button">즉시 재시작</button>
+      <p class="title-footer">버튼이나 Enter, Space로 바로 다시 시작할 수 있습니다.</p>
+    </section>
+  </main>
+
+  <script defer src="src/data/gameData.js"></script>
+  <script defer src="src/managers/SaveManager.js"></script>
+  <script defer src="src/managers/RuleManager.js"></script>
+  <script defer src="src/managers/StimulusManager.js"></script>
+  <script defer src="src/managers/InputManager.js"></script>
+  <script defer src="src/managers/UIManager.js"></script>
+  <script defer src="src/managers/GameManager.js"></script>
+  <script defer src="src/main.js"></script>
+</body>
+</html>
