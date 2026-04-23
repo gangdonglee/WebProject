@@ -20,17 +20,27 @@ window.ZeroPointThree = window.ZeroPointThree || {};
     createStimulus(rule) {
       this.turnCount += 1;
 
-      const shouldTap = Math.random() < this.config.targetProbability;
-      const pool = this.stimulusPool.filter((stimulus) => {
-        const matchesRule = this.ruleManager.matchesRule(rule, stimulus);
-        return shouldTap ? matchesRule : !matchesRule;
-      });
+      let shouldTap = Math.random() < this.config.targetProbability;
+      let pool = this.getStimulusPoolForRule(rule, shouldTap);
+
+      // Future compound rules can become more specific, so make sure a playable pool always exists.
+      if (pool.length === 0) {
+        shouldTap = !shouldTap;
+        pool = this.getStimulusPoolForRule(rule, shouldTap);
+      }
 
       const nextStimulus = this.pickStimulus(pool);
       return {
         ...nextStimulus,
         shouldTap,
       };
+    }
+
+    getStimulusPoolForRule(rule, shouldTap) {
+      return this.stimulusPool.filter((stimulus) => {
+        const matchesRule = this.ruleManager.matchesRule(rule, stimulus);
+        return shouldTap ? matchesRule : !matchesRule;
+      });
     }
 
     buildStimulusPool() {

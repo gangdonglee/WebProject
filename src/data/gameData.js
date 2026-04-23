@@ -2,43 +2,85 @@ window.ZeroPointThree = window.ZeroPointThree || {};
 
 (() => {
   const COLORS = Object.freeze([
-    { id: "red", label: "Red", className: "color-red", hex: "#ff4c62" },
-    { id: "blue", label: "Blue", className: "color-blue", hex: "#3db2ff" },
-    { id: "gold", label: "Gold", className: "color-gold", hex: "#f5ff47" },
-    { id: "mint", label: "Mint", className: "color-mint", hex: "#2ff0b2" },
+    { id: "red", label: "\ube68\uac15", className: "color-red", hex: "#ff4c62" },
+    { id: "blue", label: "\ud30c\ub791", className: "color-blue", hex: "#3db2ff" },
+    { id: "gold", label: "\ub178\ub791", className: "color-gold", hex: "#f5ff47" },
+    { id: "mint", label: "\ubbfc\ud2b8", className: "color-mint", hex: "#2ff0b2" },
   ]);
 
   const SHAPES = Object.freeze([
-    { id: "circle", label: "Circle", className: "shape-circle" },
-    { id: "square", label: "Square", className: "shape-square" },
-    { id: "triangle", label: "Triangle", className: "shape-triangle" },
-    { id: "diamond", label: "Diamond", className: "shape-diamond" },
+    { id: "circle", label: "\ub3d9\uadf8\ub77c\ubbf8", className: "shape-circle" },
+    { id: "square", label: "\ub124\ubaa8", className: "shape-square" },
+    { id: "triangle", label: "\uc138\ubaa8", className: "shape-triangle" },
+    { id: "diamond", label: "\ub9c8\ub984\ubaa8", className: "shape-diamond" },
   ]);
 
   const RULES = Object.freeze([
     {
       id: "tap-red",
-      label: "빨간 도형이면 탭",
+      label: "\ube68\uac04 \ub3c4\ud615\uc774\uba74 \ud0ed",
       shortLabel: "TAP RED",
-      hint: "빨간색 자극에만 반응하고 나머지는 무시하세요.",
+      hint: "\ube68\uac04 \ub3c4\ud615\ub9cc \ubc18\uc751\ud558\uace0 \ub098\uba38\uc9c0\ub294 \ubb34\uc2dc\ud558\uc138\uc694.",
       match: { property: "colorId", equals: "red" },
       accent: "red",
     },
     {
       id: "tap-blue",
-      label: "파란 도형이면 탭",
+      label: "\ud30c\ub780 \ub3c4\ud615\uc774\uba74 \ud0ed",
       shortLabel: "TAP BLUE",
-      hint: "파란색 자극에만 반응하고 나머지는 무시하세요.",
+      hint: "\ud30c\ub780 \ub3c4\ud615\ub9cc \ubc18\uc751\ud558\uace0 \ub098\uba38\uc9c0\ub294 \ubb34\uc2dc\ud558\uc138\uc694.",
       match: { property: "colorId", equals: "blue" },
       accent: "blue",
     },
     {
       id: "tap-square",
-      label: "네모면 탭",
+      label: "\ub124\ubaa8\uba74 \ud0ed",
       shortLabel: "TAP SQUARE",
-      hint: "네모 도형에만 반응하고 나머지는 무시하세요.",
+      hint: "\ub124\ubaa8\ub9cc \ubc18\uc751\ud558\uace0 \ub098\uba38\uc9c0\ub294 \ubb34\uc2dc\ud558\uc138\uc694.",
       match: { property: "shapeId", equals: "square" },
       accent: "gold",
+    },
+    {
+      id: "tap-gold-triangle",
+      label: "\ub178\ub780\uc0c9 \uc138\ubaa8\ub9cc \ud0ed",
+      shortLabel: "YELLOW TRIANGLE",
+      hint:
+        "\ub178\ub780\uc0c9\uc774\uba74\uc11c \uc138\ubaa8\uc778 \uc790\uadf9\uc5d0\ub9cc \ubc18\uc751\ud558\uace0 \ub098\uba38\uc9c0\ub294 \ubb34\uc2dc\ud558\uc138\uc694.",
+      match: {
+        all: [
+          { property: "colorId", equals: "gold" },
+          { property: "shapeId", equals: "triangle" },
+        ],
+      },
+      accent: "gold",
+    },
+    {
+      id: "tap-blue-diamond",
+      label: "\ud30c\ub780\uc0c9 \ub9c8\ub984\ubaa8\ub9cc \ud0ed",
+      shortLabel: "BLUE DIAMOND",
+      hint:
+        "\ud30c\ub780\uc0c9\uc774\uba74\uc11c \ub9c8\ub984\ubaa8\uc778 \uc790\uadf9\uc5d0\ub9cc \ubc18\uc751\ud558\uace0 \ub098\uba38\uc9c0\ub294 \ubb34\uc2dc\ud558\uc138\uc694.",
+      match: {
+        all: [
+          { property: "colorId", equals: "blue" },
+          { property: "shapeId", equals: "diamond" },
+        ],
+      },
+      accent: "blue",
+    },
+    {
+      id: "tap-red-circle",
+      label: "\ube68\uac04\uc0c9 \ub3d9\uadf8\ub77c\ubbf8\ub9cc \ud0ed",
+      shortLabel: "RED CIRCLE",
+      hint:
+        "\ube68\uac04\uc0c9\uc774\uba74\uc11c \ub3d9\uadf8\ub77c\ubbf8\uc778 \uc790\uadf9\uc5d0\ub9cc \ubc18\uc751\ud558\uace0 \ub098\uba38\uc9c0\ub294 \ubb34\uc2dc\ud558\uc138\uc694.",
+      match: {
+        all: [
+          { property: "colorId", equals: "red" },
+          { property: "shapeId", equals: "circle" },
+        ],
+      },
+      accent: "red",
     },
   ]);
 
