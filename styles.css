@@ -1,5 +1,5 @@
 :root {
-  color-scheme: dark;
+  color-scheme: only dark;
   --bg-deep: #08131f;
   --bg-mid: #102335;
   --panel: #10253a;
@@ -11,7 +11,7 @@
   --text-muted: #c1c8c6;
   --red: #ff4c62;
   --blue: #3db2ff;
-  --gold: #ffe24a;
+  --gold: #f5ff47;
   --mint: #2ff0b2;
   --rule-accent: var(--red);
   --rule-border-color: #8f4a4e;
@@ -166,7 +166,7 @@ button {
   padding: 8px 12px;
   border-radius: 999px;
   background: #284258;
-  color: #ffe6a4;
+  color: #fbff95;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -220,7 +220,7 @@ button {
   height: 60px;
   border: none;
   border-radius: 18px;
-  background: linear-gradient(135deg, #fff07a 0%, #ffd537 100%);
+  background: linear-gradient(135deg, #fbff95 0%, #f1ff33 100%);
   color: #11151a;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -318,7 +318,7 @@ button {
   --rule-accent: var(--gold);
   --rule-border-color: #c3b054;
   --rule-surface-color: #233748;
-  --rule-badge-color: #fff09b;
+  --rule-badge-color: #fbffb0;
 }
 
 .rule-badge {
@@ -348,7 +348,7 @@ button {
   width: 100%;
   height: 100%;
   transform-origin: left center;
-  background: linear-gradient(90deg, #2ff0b2 0%, #ffe24a 55%, #ff4c62 100%);
+  background: linear-gradient(90deg, #2ff0b2 0%, var(--gold) 55%, #ff4c62 100%);
 }
 
 .arena-shell {
@@ -383,7 +383,7 @@ button {
 .transition-kicker {
   font-size: 0.78rem;
   letter-spacing: 0.16em;
-  color: #ffe6a4;
+  color: #fbff95;
 }
 
 .transition-label {
@@ -441,52 +441,34 @@ button {
 .stimulus {
   width: min(46vw, 190px);
   aspect-ratio: 1;
-  border: 2px solid rgba(255, 255, 255, 0.16);
-  box-shadow:
-    0 0 0 8px rgba(255, 255, 255, 0.08),
-    0 18px 30px rgba(0, 0, 0, 0.28),
-    0 0 34px var(--stimulus-glow);
+  display: grid;
+  place-items: center;
   animation: stimulus-pop 180ms ease-out;
 }
 
+.stimulus-media {
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 0 26px var(--stimulus-glow));
+}
+
 .color-red {
-  --stimulus-color: var(--red);
   --stimulus-glow: rgba(255, 76, 98, 0.34);
-  background: var(--red);
 }
 
 .color-blue {
-  --stimulus-color: var(--blue);
   --stimulus-glow: rgba(61, 178, 255, 0.34);
-  background: var(--blue);
 }
 
 .color-gold {
-  --stimulus-color: var(--gold);
-  --stimulus-glow: rgba(255, 226, 74, 0.34);
-  background: var(--gold);
+  --stimulus-glow: rgba(245, 255, 71, 0.38);
 }
 
 .color-mint {
-  --stimulus-color: var(--mint);
   --stimulus-glow: rgba(47, 240, 178, 0.34);
-  background: var(--mint);
-}
-
-.shape-circle {
-  border-radius: 50%;
-}
-
-.shape-square {
-  border-radius: 22%;
-}
-
-.shape-triangle {
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-}
-
-.shape-diamond {
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
 .arena-copy {

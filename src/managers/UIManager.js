@@ -86,8 +86,18 @@ window.ZeroPointThree = window.ZeroPointThree || {};
 
     renderStimulus(stimulus) {
       const stimulusElement = document.createElement("div");
-      stimulusElement.className = `stimulus ${stimulus.colorClassName} ${stimulus.shapeClassName}`;
+      stimulusElement.className = `stimulus ${stimulus.colorClassName}`;
+      stimulusElement.setAttribute("role", "img");
       stimulusElement.setAttribute("aria-label", stimulus.accessibleLabel);
+
+      const stimulusGraphic = document.createElement("img");
+      stimulusGraphic.className = "stimulus-media";
+      stimulusGraphic.alt = "";
+      stimulusGraphic.draggable = false;
+      stimulusGraphic.decoding = "async";
+      stimulusGraphic.src = this.createStimulusDataUri(stimulus);
+
+      stimulusElement.append(stimulusGraphic);
       this.elements.stimulusSlot.replaceChildren(stimulusElement);
     }
 
@@ -145,6 +155,40 @@ window.ZeroPointThree = window.ZeroPointThree || {};
     setArenaEnabled(enabled) {
       this.elements.gameArena.disabled = !enabled;
       this.elements.gameArena.classList.toggle("is-disabled", !enabled);
+    }
+
+    createStimulusDataUri(stimulus) {
+      const fillColor = stimulus.colorHex;
+      const outlineColor = "#f5f7fb";
+      const shadowColor = "rgba(5, 10, 18, 0.34)";
+      const shapeMarkup = this.getStimulusShapeMarkup(stimulus.shapeId, fillColor, outlineColor);
+      const svgMarkup = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="presentation">
+          <defs>
+            <filter id="drop" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="16" stdDeviation="9" flood-color="${shadowColor}"/>
+            </filter>
+          </defs>
+          <g filter="url(#drop)">
+            ${shapeMarkup}
+          </g>
+        </svg>
+      `.trim();
+
+      return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svgMarkup)}`;
+    }
+
+    getStimulusShapeMarkup(shapeId, fillColor, outlineColor) {
+      const baseAttributes = `fill="${fillColor}" stroke="${outlineColor}" stroke-opacity="0.22" stroke-width="6"`;
+
+      const shapeMarkupById = {
+        circle: `<circle cx="110" cy="110" r="84" ${baseAttributes} />`,
+        square: `<rect x="26" y="26" width="168" height="168" rx="42" ${baseAttributes} />`,
+        triangle: `<path d="M110 24 L194 192 H26 Z" ${baseAttributes} stroke-linejoin="round" />`,
+        diamond: `<path d="M110 20 L200 110 L110 200 L20 110 Z" ${baseAttributes} stroke-linejoin="round" />`,
+      };
+
+      return shapeMarkupById[shapeId] ?? shapeMarkupById.circle;
     }
 
     showResult({ score, bestScore, failureReason, lastRuleLabel }) {

@@ -2,10 +2,10 @@ window.ZeroPointThree = window.ZeroPointThree || {};
 
 (() => {
   const COLORS = Object.freeze([
-    { id: "red", label: "Red", className: "color-red", hex: "#ff5a5f" },
-    { id: "blue", label: "Blue", className: "color-blue", hex: "#4ea8ff" },
-    { id: "gold", label: "Gold", className: "color-gold", hex: "#ffd166" },
-    { id: "mint", label: "Mint", className: "color-mint", hex: "#44e1b1" },
+    { id: "red", label: "Red", className: "color-red", hex: "#ff4c62" },
+    { id: "blue", label: "Blue", className: "color-blue", hex: "#3db2ff" },
+    { id: "gold", label: "Gold", className: "color-gold", hex: "#f5ff47" },
+    { id: "mint", label: "Mint", className: "color-mint", hex: "#2ff0b2" },
   ]);
 
   const SHAPES = Object.freeze([
